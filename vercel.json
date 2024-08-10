@@ -1,3 +1,6 @@
 {
   "rewrites": [{ "source": "/(.*)", "destination": "views/index.html" }]
 }
+{
+  "framework": "other"
+}
