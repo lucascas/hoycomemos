@@ -1,13 +1,24 @@
 {
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "/api/$1"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/views/$1"
-      }
-    ]
-  }
-  
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/views/index.html"  // Redirigir la raíz al archivo index.html en la carpeta views
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"  // Redirigir las rutas de la API a la carpeta api
+    },
+    {
+      "src": "/styles/(.*)",
+      "dest": "/styles/$1"  // Redirigir las rutas de estilos a la carpeta styles
+    },
+    {
+      "src": "/scripts/(.*)",
+      "dest": "/scripts/$1"  // Redirigir las rutas de scripts a la carpeta scripts
+    },
+    {
+      "src": "/public/(.*)",
+      "dest": "/public/$1"  // Redirigir las rutas de archivos estáticos a la carpeta public
+    }
+  ]
+}
