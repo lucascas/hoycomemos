@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </p>
                     <p class="control">
                         <button class="button is-small is-info edit-meal" data-day="${day.toLowerCase()}" data-meal="almuerzo">
-                            <img src="edit-05.svg" class="edit-icon" alt="Editar">
+                            <img src="/public/edit-05.svg" class="edit-icon" alt="Editar">  <!-- Actualiza la ruta del icono -->
                         </button>
                     </p>
                 </div>
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </p>
                     <p class="control">
                         <button class="button is-small is-info edit-meal" data-day="${day.toLowerCase()}" data-meal="cena">
-                            <img src="edit-05.svg" class="edit-icon" alt="Editar">
+                            <img src="/public/edit-05.svg" class="edit-icon" alt="Editar">  <!-- Actualiza la ruta del icono -->
                         </button>
                     </p>
                 </div>
@@ -101,7 +101,7 @@ function renderComida(comida) {
 }
 
 function loadComidas() {
-    fetch('get_comidas.php')
+    fetch('/api/get_comidas.php')  // Actualiza la ruta al archivo PHP
         .then(response => response.json())
         .then(comidas => {
             window.comidas = comidas;
@@ -204,7 +204,7 @@ function saveCategory() {
     const categories = Array.from(checkboxes).map(cb => cb.value);
     const comidaId = document.getElementById('saveCategoryButton').dataset.comidaId;
 
-    fetch('update_comida_category.php', {
+    fetch('/api/update_comida_category.php', {  // Actualiza la ruta al archivo PHP
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
