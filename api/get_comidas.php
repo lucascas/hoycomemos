@@ -1,19 +1,11 @@
 <?php
 
+require 'vendor/autoload.php'; // Cargar Composer
 
-   // PHP version 7.4 used here
-   try {
-    // connect to OVHcloud Public Cloud Databases for MongoDB (cluster in version 4.4, MongoDB PHP Extension in 1.8.1)
-    $m = new MongoDB\Driver\Manager('mongodb+srv://lucascastillo:pvX2t2BGvw9oJeNJ@appcomidas.2naw1.mongodb.net/comidas');
-    echo "Connection to database successfully";
-    // display the content of the driver, for diagnosis purpose
-    echo var_dump($m);
-}
-catch (Throwable $e) {
-    // catch throwables when the connection is not a success
-    echo "Captured Throwable for connection : " . $e->getMessage() . PHP_EOL;
-}
+$client = new MongoDB\Client("mongodb+srv://lucascastillo:<password>@appcomidas.2naw1.mongodb.net/?retryWrites=true&w=majority&appName=appcomidas");
+$collection = $client->database->comidas; // Reemplaza 'database' con el nombre de tu BD
 
+// Realiza operaciones con $collection
 
 
 
