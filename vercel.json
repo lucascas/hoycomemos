@@ -1,20 +1,13 @@
 {
   "routes": [
     {
+      "src": "/",
+      "dest": "/index.php" 
+    },
+    {
       "src": "/api/(.*)",
       "dest": "/api/$1"
-    },
-    {
-      "src": "/styles/(.*)",
-      "dest": "/styles/$1"
-    },
-    {
-      "src": "/scripts/(.*)",
-      "dest": "/scripts/$1" 
-    },
-    {
-      "src": "/public/(.*)",
-      "dest": "/public/$1"
     }
   ]
 }
+
